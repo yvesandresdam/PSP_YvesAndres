@@ -1,6 +1,10 @@
 import java.util.Scanner;
 
 public class Main {
+
+    // EJERCICIO 1
+    // ENUNCIADO AL FINAL DEL EJERCICIO
+
     public static int number1;
     public static int number2;
 

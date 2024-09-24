@@ -1,6 +1,6 @@
 #Propios
 /psp-ejemplos/*
-/psp-ejercicios/*
+/psp-ejercicios/*.*
 
 # Compiled class file
 *.class

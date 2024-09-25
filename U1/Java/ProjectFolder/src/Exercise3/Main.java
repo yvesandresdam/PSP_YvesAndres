@@ -3,7 +3,7 @@ package Exercise3;
 public class Main {
     public static void main(String[] args) {
 
-        System.out.println("Ejercicio 2 - PSP");
+        System.out.println("Ejercicio 3 - PSP");
         System.out.println("DAM - Yves Andres Elianor");
 
         App application = new App();

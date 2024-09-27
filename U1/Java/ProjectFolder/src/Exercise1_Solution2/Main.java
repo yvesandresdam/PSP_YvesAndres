@@ -13,7 +13,7 @@ public class Main {
 
         // La clase 'Numbers' implementa la interfaz Runnable
         Numbers countingApp = new Numbers();
-        countingApp.StartApp();
+        countingApp.startApp();
 
         // La clase Thread, requiere por parametros de una instancia 'Runnable'
         Thread hiloAlternative = new Thread(countingApp);

@@ -4,18 +4,18 @@ import java.util.Scanner;
 public class Main {
 
     // EJERCICIO 1
-
+    // Conceptos basicos sobre la clase 'Thread'
 
     public static int number1;
     public static int number2;
 
     public static void main(String[] args)
     {
-        GetNumbers();
-        CountingNumbers(number1, number2);
+        getNumbers();
+        countingNumbers(number1, number2);
     }
 
-    public static void GetNumbers(){
+    public static void getNumbers(){
         // Crear un objeto Scanner para leer los datos ingresados por el usuario
         Scanner scanner = new Scanner(System.in);
 
@@ -38,11 +38,11 @@ public class Main {
         scanner.close();
     }
 
-    public static void CountingNumbers(int number1, int number2){
-        boolean Number1IsMajor = IsMajor(number1, number2);
+    public static void countingNumbers(int number1, int number2){
+        boolean number1IsMajor = isMajor(number1, number2);
         while(number1 != number2){
             try{
-                if(number1 > number2)
+                if(number1IsMajor)
                 {
                     number2++;
                     System.out.println(number2);
@@ -56,19 +56,38 @@ public class Main {
             }catch(InterruptedException ie){
                 System.out.println("Hilo interrumpido");
             }
-
         }
     }
 
-    public static boolean IsMajor(int number1,int number2){
+    private static boolean isMajor(int number1,int number2){
         return number1 > number2;
     }
 }
 
 /*
+    Documentacion
+    -------------
 
-    Ejercicio 1
-    -----------
+    ATRIBUTOS
+    + number1: int
+    una variable de tipo entero llamado 'number1'
+    + number2: int
+    una variable de tipo entero llamado 'number2'
+
+    FUNCIONES
+    + _static_ getNumbers(): void
+    La función le pide al usuario que introduzca dos numeros en la linea de consola.
+
+    + _static_ countingNumbers(int,int): void
+    La funcion cuenta numeros desde el primer parametro entero hasta el segundo.
+    Ademas de esto, realiza una pausa entre cada numero de 1 segundo.
+
+    - _static_ isMajor(int,int): Boolean
+    La funcion devuelve verdadero si el primer numero es mayor que el segundo y viceversa.
+
+
+    Enunciado
+    -------------
 
     Crea un programa que pida al usuario dos números n1 y n2, posteriormente lanzará un
     hilo que mostrará los números existentes entre n1 y n2. Haz que el hilo se suspenda de

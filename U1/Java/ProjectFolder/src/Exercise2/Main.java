@@ -12,7 +12,7 @@ public class Main {
 }
 
 /*
-    Ejercicio 2
+    ENUNCIADO
     -----------
 
     Realiza un programa que pida al usuario un número n. El programa lanzará n hilos, el primero se

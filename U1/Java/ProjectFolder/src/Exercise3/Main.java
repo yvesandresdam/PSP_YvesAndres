@@ -12,7 +12,7 @@ public class Main {
 }
 
 /*
-    Ejercicio 3
+    ENUNCIADO
     -----------
 
     Modifica el programa anterior para que, tras lanzar los hilos, el programa principal muestre cada

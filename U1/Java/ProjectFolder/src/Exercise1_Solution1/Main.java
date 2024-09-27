@@ -7,7 +7,6 @@ public class Main {
 
     // EJERCICIO 1
     // SOLUCION 1
-    // PROCESO QUE CUENTA NUMEROS
 
     private static int number1;
     private static int number2;

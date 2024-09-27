@@ -13,7 +13,7 @@ public class Numbers implements Runnable {
 
     // Funcion que recoje los valores de los numeros que introduce
     // el usuario por consola
-    public void StartApp() {
+    public void startApp() {
         Scanner scanner = new Scanner(System.in);
 
         System.out.printf("Introduce el primer numero: ");

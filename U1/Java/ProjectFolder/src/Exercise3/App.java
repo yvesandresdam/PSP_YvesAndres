@@ -1,7 +1,6 @@
 package Exercise3;
 public class App {
     public void launch() {
-
         // Pregunta al usuario el numero de hilos
         int threadNumber = UI.getUserInputText();
 

@@ -13,9 +13,6 @@ public class Main {
         //EJERCICIO 1
         //USANDO FUNCIONES LAMBDA
 
-        //SINTAXIS
-        //Thread hilo1 = new Thread(() -> {});
-
         Thread hilo1 = new Thread(() -> {
             setNumbers();
             countingNumbers();
@@ -65,3 +62,16 @@ public class Main {
         System.out.println("El proceso ha concluido");
     }
 }
+
+/*
+    DOCUMENTACION
+    -------------
+    SINTAXIS
+    Thread hilo1 = new Thread(() -> {
+    @Override
+    public void run(){
+    // codigo a realizar
+    }
+    });
+    hilo1.start();
+ */

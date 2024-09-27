@@ -8,17 +8,6 @@ public class Main {
     //EJERCICIO 1
     //USANDO FUNCIONES ANONIMAS
 
-    //SINTAXIS
-    //Runnable runnable = new Runnable(){
-    // /* Codigo a ejecutar
-    //      @Override
-    //      public void run(){
-    //      Codigo a ejecutar
-    //      }
-    // };
-    //Thread Hilo1 = new Thread(runnable);
-    //Hilo1.start();
-
     private static int number1;
     private static int number2;
     private static final int MAXVALUE = 1000;
@@ -35,7 +24,6 @@ public class Main {
 
         Thread hilo1 = new Thread(runnable);
         hilo1.start();
-
     }
 
     private static int getRandom(int maxValue) {
@@ -75,3 +63,19 @@ public class Main {
         System.out.println("El proceso ha concluido");
     }
 }
+
+
+/*
+    DOCUMENTACION
+    -------------
+    SINTAXIS
+    Runnable runnable = new Runnable(){
+    //    Codigo a ejecutar
+          @Override
+          public void run(){
+          Codigo a ejecutar
+          }
+     };
+    Thread Hilo1 = new Thread(runnable);
+    Hilo1.start();
+ */

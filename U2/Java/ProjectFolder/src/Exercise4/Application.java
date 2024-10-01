@@ -7,7 +7,7 @@ public class Application {
         System.out.println("Bienvenido a adivinar hilos temporales");
 
         // Variable de numero que hay que adivinar
-        int numberGoal = Utils.getRandom(10, 20);
+        int numberGoal = Utils.getRandom(10, 15);
 
         System.out.println("Tienes que adivinar en que momento el programa está contando este numero: " + numberGoal);
         System.out.println("Pulsa una tecla para parar el temporizador");
@@ -35,10 +35,11 @@ public class Application {
 
         // Establece la condicion de victoria
         int playerNumber = numbers.getCurrentNumber();
+        System.out.println(playerNumber);
         if (playerNumber == numberGoal)
-            System.out.println("Has acertado el momento exacto del numero deseado!");
+            System.out.println("Has acertado el momento exacto!");
         else
-            System.out.println("No has acertado el momento del numero deseado");
+            System.out.println("No has acertado el momento exacto");
     }
 
     public void counting5Numbers() {

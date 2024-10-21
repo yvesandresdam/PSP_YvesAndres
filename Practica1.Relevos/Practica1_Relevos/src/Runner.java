@@ -1,19 +1,31 @@
 public class Runner {
     private int idRunner;
     private int idLane;
-    private boolean stickOn;
+    private int position;
+    private boolean hasStickOn;
 
+    // Constructor de Runner
     public Runner(int idRunner, int idLane){
         this.idRunner = idRunner;
         this.idLane = idLane;
     }
 
-    private boolean hasStick(){
-        return stickOn;
+    // region Getters / Setters
+    public int getPosition(){
+        return position;
     }
+    public void setPosition(int position){
+        this.position = position;
+    }
+    public int getID(){
+        return idRunner;
+    }
+    public void setID(int idRunner){
+        this.idRunner = idRunner;
+    }
+    // endregion
 
-    private void moveRunner(){
-        if(stickOn)
-            position++;
+    private boolean hasStick(){
+        return hasStickOn;
     }
 }

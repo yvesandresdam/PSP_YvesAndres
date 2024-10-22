@@ -1,7 +1,6 @@
 public class Runner {
     private int idRunner;
     private int idLane;
-    private int position;
     private boolean hasStickOn;
 
     // Constructor de Runner
@@ -11,12 +10,6 @@ public class Runner {
     }
 
     // region Getters / Setters
-    public int getPosition(){
-        return position;
-    }
-    public void setPosition(int position){
-        this.position = position;
-    }
     public int getID(){
         return idRunner;
     }

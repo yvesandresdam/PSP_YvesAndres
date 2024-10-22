@@ -5,9 +5,7 @@ public class Lane {
     // Atributos de la clase carril
 
     // Posicion que tiene el carril
-    private int position;
     private Position positionTest;
-    private List<Runner> runnersList = new ArrayList<>();
 
 
     // Identificador del carril

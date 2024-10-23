@@ -3,7 +3,11 @@ public class Runner {
     private int idLane;
     private boolean hasStickOn;
 
-    // Constructor de Runner
+    // CONSTRUCTORES de Runner
+    public Runner(){};
+    public Runner (int idRunner){
+        this.idRunner = idRunner;
+    }
     public Runner(int idRunner, int idLane){
         this.idRunner = idRunner;
         this.idLane = idLane;

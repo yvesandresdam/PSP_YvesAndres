@@ -1,31 +1,63 @@
 import java.util.List;
-import java.util.ArrayList;
 
 public class Lane {
+<<<<<<< Updated upstream
     // Atributos de la clase carril
 
     // Posicion que tiene el carril
     private Position positionTest;
+=======
+>>>>>>> Stashed changes
 
+    // ATRIBUTOS de la clase carril
+    private Position position;
+    private List<Position> positionList;
 
     // Identificador del carril
     private int idCarril;
 
-    // Constructor de carril, recibe el numero de carril
+
+
+    // CONSTRUCTOR de la clase carril
     public Lane(int IDCarril) {
         idCarril = IDCarril;
+        for(int i = 0; i <= 400000; i++){
+            Position p = new Position(i);
+            positionList.add(p);
+        }
     }
+
 
     // region Getters / Setters
     public int getIDCarril() {
         return idCarril;
     }
-
-    public void setRunnerAtPosition(int position) {
-        this.position = position;
+    public void setIDCarril(int idCarril){
+        this.idCarril = idCarril;
     }
 
-    public int getPosition() {
+    public void setPosition(Position position){
+        this.position = position;
+    }
+    public void setRunnerAtPosition(Position position, Runner runner) {
+        for(Position p : positionList)
+            if(p.equals(position))
+                p.setRunner(runner,getIDCarril());
+    }
+    public void setRunnerAtPositionNumber(int positionMilimeter, Runner runner){
+        Position p = positionList.get(number);
+        p.setRunner(runner);
+    }
+    public void quitRunnerAtPositionWithNumber(int positionMilimeter, Runner runner){
+        Position p = positionList.get(number);
+        p.quitRunner(runner);
+    }
+    public void setRunnerAtPositionWithNumber(int positionMilimeter, Runner runner) {
+        for(Position p : positionList)
+            if(p.milimeter == number)
+                p.setRunner(runner,getIDCarril());
+    }
+    public Position getPosition() {
         return position;
     }
     // endregion
@@ -73,16 +105,9 @@ public class Lane {
         t4.start();
     }
 
-    private void addRunner(int idRunner) {
-        Runner runner = new Runner(idRunner,1);
-        if (idRunner == 1)
-            runner.setPosition(0);
-        else if (idRunner == 2)
-            runner.setPosition(100000);
-        else if (idRunner == 3)
-            runner.setPosition(200000);
-        else if (idRunner == 4)
-            runner.setPosition(300000);
+    // OBLIGATORIO
+    private void addRunner(Runner runner, int positionMilimeter) {
+        setRunnerAtPositionNumber(positionMilimeter,runner);
     }
     private boolean moveRunner(int idRunner) {
         for (Runner runner : runnersList) {

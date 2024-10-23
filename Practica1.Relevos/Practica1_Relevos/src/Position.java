@@ -1,8 +1,4 @@
 public class Position {
-<<<<<<< Updated upstream
-    public int position;
-    public Runner idRunner;
-=======
     public int milimeter;
     public int idRunner;
     public Runner runner;
@@ -24,5 +20,4 @@ public class Position {
         Runner r = null;
         return true;
     }
->>>>>>> Stashed changes
 }

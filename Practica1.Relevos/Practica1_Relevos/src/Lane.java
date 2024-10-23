@@ -1,17 +1,11 @@
 import java.util.List;
 
 public class Lane {
-<<<<<<< Updated upstream
-    // Atributos de la clase carril
-
-    // Posicion que tiene el carril
-    private Position positionTest;
-=======
->>>>>>> Stashed changes
 
     // ATRIBUTOS de la clase carril
     private Position position;
     private List<Position> positionList;
+    private List<Runner> runnersList;
 
     // Identificador del carril
     private int idCarril;
@@ -44,18 +38,13 @@ public class Lane {
             if(p.equals(position))
                 p.setRunner(runner,getIDCarril());
     }
-    public void setRunnerAtPositionNumber(int positionMilimeter, Runner runner){
-        Position p = positionList.get(number);
+    public void setRunnerAtPositionWithNumber(int positionMilimeter, Runner runner){
+        Position p = positionList.get(positionMilimeter);
         p.setRunner(runner);
     }
     public void quitRunnerAtPositionWithNumber(int positionMilimeter, Runner runner){
-        Position p = positionList.get(number);
+        Position p = positionList.get(positionMilimeter);
         p.quitRunner(runner);
-    }
-    public void setRunnerAtPositionWithNumber(int positionMilimeter, Runner runner) {
-        for(Position p : positionList)
-            if(p.milimeter == number)
-                p.setRunner(runner,getIDCarril());
     }
     public Position getPosition() {
         return position;
@@ -68,7 +57,8 @@ public class Lane {
         Runnable hiloCorredor1 = new Runnable() {
             @Override
             public void run() {
-                addRunner(1);
+                Runner runner = new Runner(1);
+                addRunner(runner,0);
             }
         };
         Thread t1 = new Thread(hiloCorredor1);
@@ -78,7 +68,8 @@ public class Lane {
         Runnable hiloCorredor2 = new Runnable() {
             @Override
             public void run() {
-                addRunner(2);
+                Runner runner = new Runner(2);
+                addRunner(runner,100000);
             }
         };
         Thread t2 = new Thread(hiloCorredor2);
@@ -88,7 +79,8 @@ public class Lane {
         Runnable hiloCorredor3 = new Runnable() {
             @Override
             public void run() {
-                addRunner(3);
+                Runner runner = new Runner(3);
+                addRunner(runner,200000);
             }
         };
         Thread t3 = new Thread(hiloCorredor3);
@@ -98,7 +90,8 @@ public class Lane {
         Runnable hiloCorredor4 = new Runnable() {
             @Override
             public void run() {
-                addRunner(4);
+                Runner runner = new Runner(4);
+                addRunner(runner,300000);
             }
         };
         Thread t4 = new Thread(hiloCorredor4);
@@ -107,23 +100,6 @@ public class Lane {
 
     // OBLIGATORIO
     private void addRunner(Runner runner, int positionMilimeter) {
-        setRunnerAtPositionNumber(positionMilimeter,runner);
-    }
-    private boolean moveRunner(int idRunner) {
-        for (Runner runner : runnersList) {
-            if(runner.getID() == (idRunner)) {
-                int actualPosition = runner.getPosition();
-                runner.setPosition(actualPosition++);
-            }
-        }
-        return true;
-    }
-
-    private int getPosition(int idRunner) {
-        for (Runner runner : runnersList) {
-            if(runner.getID() == (idRunner))
-                return runner.getPosition();
-        }
-        return 0;
+        setRunnerAtPositionWithNumber(positionMilimeter,runner);
     }
 }

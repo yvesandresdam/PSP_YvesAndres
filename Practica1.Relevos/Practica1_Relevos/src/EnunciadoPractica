@@ -13,9 +13,7 @@
 
     Clase Carril
     ------------
-    - Se encargará de almacenar las estructuras necesarias para saber qué corredores hay en el carril y
-    en qué posición se encuentran. El carril tendrá 400000 posiciones.
-    - Recibirá en su constructor un identificador numérico.
+
     - Dispondrá de un método añadirCorredor que recibirá por parámetro un objeto de tipo Corredor y
     una posición. Llamando a este método podremos añadir corredores en una posición determinada
     del carril. Devolverá un booleano indicando si se ha podido añadir al corredor o no.
@@ -33,17 +31,24 @@
     - Los corredores serán hilos. Si no tienen el testigo, permanecerán quietos. Si tienen el testigo
     correrán hasta alcanzar al siguiente corredor o hasta alcanzar la meta.
 
+    HECHO
+    - Se encargará de almacenar las estructuras necesarias para saber qué corredores hay en el carril y
+      en qué posición se encuentran. El carril tendrá 400000 posiciones.
+    - Recibirá en su constructor un identificador numérico.
+
     Clase Corredor
     --------------
     - Cada corredor será un hilo.
-    - El corredor no almacenará su posición en el carril, ya que esto lo hace la clase Carril.
-    - Recibirá en su constructor un identificador y el carril en el que correrá.
     - Debe saber si tiene o no el testigo. El primer corredor de cada carril empezará teniendo el testigo.
     - Hará uso de los métodos de la clase Carril para poder avanzar, obtener su posición y saber si puede
     pasar el testigo.
     - Si tiene el testigo avanzará, pero si no lo tiene deberá esperar a recibirlo (a no ser que ya haya
     corrido su tramo, en ese caso, finalizaría).
     - Cuando detecte que puede pasar el testigo al siguiente corredor, lo hará.
+
+    HECHO
+    - El corredor no almacenará su posición en el carril, ya que esto lo hace la clase Carril.
+    - Recibirá en su constructor un identificador y el carril en el que correrá.
 
 
     Clase Main
@@ -59,6 +64,11 @@
     ha quedado el equipo de corredores de ese carril. Por ejemplo, suponiendo que finaliza en primer
     lugar el hilo carril con identificador 3, el hilo principal mostrará un mensaje como el siguiente:
     PODIUM: Posición 1º para el equipo de carril 3.
+
+    HECHO
+
+
+
 
 
     Ejemplo de ejecución

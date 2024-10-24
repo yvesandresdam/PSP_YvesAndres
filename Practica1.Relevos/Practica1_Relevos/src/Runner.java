@@ -1,28 +1,34 @@
 public class Runner {
+    // ATRIBUTOS
     private int idRunner;
     private int idLane;
-    private boolean hasStickOn;
+    private boolean runnerHasStick;
 
-    // CONSTRUCTORES de Runner
-    public Runner(){};
-    public Runner (int idRunner){
-        this.idRunner = idRunner;
-    }
-    public Runner(int idRunner, int idLane){
+    // CONSTRUCTORES
+    public Runner(int idRunner, int idLane) {
         this.idRunner = idRunner;
         this.idLane = idLane;
     }
 
     // region Getters / Setters
-    public int getID(){
+    public int getIDRunner() {
         return idRunner;
     }
-    public void setID(int idRunner){
-        this.idRunner = idRunner;
+    public void setIDRunner(int IDRunner) {
+        idRunner = IDRunner;
+    }
+    public int getIDLane(){
+        return idLane;
+    }
+    public void setIDLane(int IDLane){
+        idLane = IDLane;
     }
     // endregion
 
-    private boolean hasStick(){
-        return hasStickOn;
+    private boolean hasStick() {
+        return runnerHasStick;
+    }
+    public void setStick(boolean setStick){
+        runnerHasStick = setStick;
     }
 }

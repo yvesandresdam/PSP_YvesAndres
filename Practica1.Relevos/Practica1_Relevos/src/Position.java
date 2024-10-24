@@ -1,12 +1,18 @@
 public class Position {
+    
+    // ATRIBUTOS
     public int milimeter;
     public int idRunner;
     public Runner runner;
 
+
+    // CONSTRUCTORES
     public Position(){};
     public Position(int milimeter){
         this.milimeter = milimeter;
     }
+
+    // FUNCTIONS
     public boolean setRunner(Runner runner, int idRunner){
         Runner r = new Runner(idRunner);
         return true;

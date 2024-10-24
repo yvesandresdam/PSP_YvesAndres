@@ -3,13 +3,11 @@ import java.util.List;
 public class Lane {
 
     // ATRIBUTOS de la clase carril
-    private Position position;
     private List<Position> positionList;
     private List<Runner> runnersList;
 
     // Identificador del carril
     private int idCarril;
-
 
 
     // CONSTRUCTOR de la clase carril
@@ -30,9 +28,7 @@ public class Lane {
         this.idCarril = idCarril;
     }
 
-    public void setPosition(Position position){
-        this.position = position;
-    }
+
     public void setRunnerAtPosition(Position position, Runner runner) {
         for(Position p : positionList)
             if(p.equals(position))
@@ -45,9 +41,6 @@ public class Lane {
     public void quitRunnerAtPositionWithNumber(int positionMilimeter, Runner runner){
         Position p = positionList.get(positionMilimeter);
         p.quitRunner(runner);
-    }
-    public Position getPosition() {
-        return position;
     }
     // endregion
 

@@ -14,20 +14,11 @@
     Clase Carril
     ------------
 
-    - Dispondrá de un método añadirCorredor que recibirá por parámetro un objeto de tipo Corredor y
-    una posición. Llamando a este método podremos añadir corredores en una posición determinada
-    del carril. Devolverá un booleano indicando si se ha podido añadir al corredor o no.
-    - Dispondrá de un método avanzarCorredor que únicamente recibirá por parámetro el identificador
-    del corredor. El método se encargará de aumentar en 1 la posición de dicho corredor. El corredor
-    solo podrá avanzar si la siguiente posición está vacía (no hay ningún otro corredor en ella) y si no
-    ha alcanzado la última posición del carril (ha llegado a la meta). El método devolverá un booleano
-    indicando si el corredor ha podido avanzar o no.
     - Dispondrá de un método puedePasarTestigo que únicamente recibirá por parámetro el
     identificador de un corredor. El método comprobará si en la posición siguiente a la de ese corredor
     hay otro corredor. Si es así devolverá el objeto corredor del corredor que hay en la posición
     siguiente, en caso contrario devolverá null.
-    - Dispondrá de un método obtenerPosicion que únicamente recibirá por parámetro el identificador
-    de un corredor y devolverá su posición.
+
     - Los corredores serán hilos. Si no tienen el testigo, permanecerán quietos. Si tienen el testigo
     correrán hasta alcanzar al siguiente corredor o hasta alcanzar la meta.
 
@@ -35,11 +26,20 @@
     - Se encargará de almacenar las estructuras necesarias para saber qué corredores hay en el carril y
       en qué posición se encuentran. El carril tendrá 400000 posiciones.
     - Recibirá en su constructor un identificador numérico.
+    - Dispondrá de un método añadirCorredor que recibirá por parámetro un objeto de tipo Corredor y
+      una posición. Llamando a este método podremos añadir corredores en una posición determinada
+      del carril. Devolverá un booleano indicando si se ha podido añadir al corredor o no.
+    - Dispondrá de un método avanzarCorredor que únicamente recibirá por parámetro el identificador
+      del corredor. El método se encargará de aumentar en 1 la posición de dicho corredor. El corredor
+      solo podrá avanzar si la siguiente posición está vacía (no hay ningún otro corredor en ella) y si no
+      ha alcanzado la última posición del carril (ha llegado a la meta). El método devolverá un booleano
+      indicando si el corredor ha podido avanzar o no.
+    - Dispondrá de un método obtenerPosicion que únicamente recibirá por parámetro el identificador
+      de un corredor y devolverá su posición.
 
     Clase Corredor
     --------------
-    - Cada corredor será un hilo.
-    - Debe saber si tiene o no el testigo. El primer corredor de cada carril empezará teniendo el testigo.
+
     - Hará uso de los métodos de la clase Carril para poder avanzar, obtener su posición y saber si puede
     pasar el testigo.
     - Si tiene el testigo avanzará, pero si no lo tiene deberá esperar a recibirlo (a no ser que ya haya
@@ -49,6 +49,8 @@
     HECHO
     - El corredor no almacenará su posición en el carril, ya que esto lo hace la clase Carril.
     - Recibirá en su constructor un identificador y el carril en el que correrá.
+    - Cada corredor será un hilo.
+    - Debe saber si tiene o no el testigo. El primer corredor de cada carril empezará teniendo el testigo.
 
 
     Clase Main

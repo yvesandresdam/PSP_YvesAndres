@@ -1,98 +1,79 @@
-import java.util.List;
-
 public class Lane {
 
-    // ATRIBUTOS de la clase carril
-    private List<Position> positionList;
-    private List<Runner> runnersList;
+    // Posicion del carril
+    private int position;
 
-    // Identificador del carril
-    private int idCarril;
-
+    // Id del carril
+    private int idLane;
 
     // CONSTRUCTOR de la clase carril
-    public Lane(int IDCarril) {
-        idCarril = IDCarril;
-        for(int i = 0; i <= 400000; i++){
-            Position p = new Position(i);
-            positionList.add(p);
+    public Lane(int IDLane) {
+        idLane = IDLane;
+        position = 0;
+    }
+
+    public void startLane() {
+        Thread runnerThread = new Thread(() -> {
+            int idRunner = 4;
+            for (int i = 1; i <= idRunner; i++) {
+                Runner runner = new Runner(i, idLane, new Lane(idLane));
+                runner.run();
+            }
+        });
+        runnerThread.start();
+    }
+
+    // Añade un corredor al carril
+    private boolean addRunner(Runner runner, int position) {
+//        for (Integer runnerPosition : runnersList.values()) {
+//            if (runnerPosition == position)
+//                return false;
+//        }
+//        runnersList.put(runner, position);
+        return true;
+    }
+
+    // Avance del corredor
+    public boolean advanceRunner(int idRunner) {
+        while (position <= 400000) {
+            position++;
+            if (position == 100000) {
+                System.out.printf("Carril %s Corredor %s: Pierdo el testigo\n", idLane, idRunner);
+                idRunner = 2;
+                System.out.printf("Carril %s Corredor %s: Recojo el testigo\n", idLane, idRunner);
+                System.out.printf("Carril %s Corredor %s: Tengo el testigo y empiezo a correr\n", idLane, idRunner);
+            } else if (position == 200000) {
+                System.out.printf("Carril %s Corredor %s: Pierdo el testigo\n", idLane, idRunner);
+                idRunner = 3;
+                System.out.printf("Carril %s Corredor %s: Recojo el testigo\n", idLane, idRunner);
+                System.out.printf("Carril %s Corredor %s: Tengo el testigo y empiezo a correr\n", idLane, idRunner);
+            } else if (position == 300000) {
+                System.out.printf("Carril %s Corredor %s: Pierdo el testigo\n", idLane, idRunner);
+                idRunner = 4;
+                System.out.printf("Carril %s Corredor %s: Recojo el testigo\n", idLane, idRunner);
+                System.out.printf("Carril %s Corredor %s: Tengo el testigo y empiezo a correr\n", idLane, idRunner);
+            }
         }
+        return true;
     }
 
 
-    // region Getters / Setters
-    public int getIDCarril() {
-        return idCarril;
+    // Getters / Setters
+    public int getIDLane() {
+        return idLane;
     }
-    public void setIDCarril(int idCarril){
-        this.idCarril = idCarril;
-    }
-
-
-    public void setRunnerAtPosition(Position position, Runner runner) {
-        for(Position p : positionList)
-            if(p.equals(position))
-                p.setRunner(runner,getIDCarril());
-    }
-    public void setRunnerAtPositionWithNumber(int positionMilimeter, Runner runner){
-        Position p = positionList.get(positionMilimeter);
-        p.setRunner(runner);
-    }
-    public void quitRunnerAtPositionWithNumber(int positionMilimeter, Runner runner){
-        Position p = positionList.get(positionMilimeter);
-        p.quitRunner(runner);
-    }
-    // endregion
-
-    public void startHiloCorredor() {
-
-        // Runner1
-        Runnable hiloCorredor1 = new Runnable() {
-            @Override
-            public void run() {
-                Runner runner = new Runner(1);
-                addRunner(runner,0);
-            }
-        };
-        Thread t1 = new Thread(hiloCorredor1);
-        t1.start();
-
-        // Runner2
-        Runnable hiloCorredor2 = new Runnable() {
-            @Override
-            public void run() {
-                Runner runner = new Runner(2);
-                addRunner(runner,100000);
-            }
-        };
-        Thread t2 = new Thread(hiloCorredor2);
-        t2.start();
-
-        // Runner3
-        Runnable hiloCorredor3 = new Runnable() {
-            @Override
-            public void run() {
-                Runner runner = new Runner(3);
-                addRunner(runner,200000);
-            }
-        };
-        Thread t3 = new Thread(hiloCorredor3);
-        t3.start();
-
-        // Runner4
-        Runnable hiloCorredor4 = new Runnable() {
-            @Override
-            public void run() {
-                Runner runner = new Runner(4);
-                addRunner(runner,300000);
-            }
-        };
-        Thread t4 = new Thread(hiloCorredor4);
-        t4.start();
+    public void setIDLane(int IDLane) {
+        idLane = IDLane;
     }
 
-    // OBLIGATORIO
-    private void addRunner(Runner runner, int positionMilimeter) {
-        setRunnerAtPositionWithNumber(positionMilimeter,runner);
+    public int getRunnerPositionWithID(int idRunner) {
+        if (idRunner == 1)
+            return 0;
+        else if (idRunner == 2)
+            return 100000;
+        else if (idRunner == 3)
+            return 200000;
+        else
+            return 300000;
     }
 }

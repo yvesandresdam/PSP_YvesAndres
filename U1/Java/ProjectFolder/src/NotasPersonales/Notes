@@ -1,0 +1,67 @@
+Semana 1:
+Ejemplos del 1 al 10
+Ejercicios 1 al 3
+Videos:
+1 - creacion de hilos
+https://www.youtube.com/watch?v=iLUvfzTDAys
+2 - creacion de hilos con clases anonimas y lambda
+https://www.youtube.com/watch?v=9PWe0jufmfI
+3 - informacion de los hilos
+https://www.youtube.com/watch?v=XfwRssBVO1E&t=1s
+
+
+Semana 2:
+Ejemplos del 11 al 13d
+Ejercicios 4 y 5
+Videos:
+4 - suspension de hilos
+https://www.youtube.com/watch?v=exJzCDx4qIc
+5 - finalizacion de hilos con flags
+https://www.youtube.com/watch?v=Atf7KRVIS9o
+6 - finalizacion de hilos con interrupciones
+https://www.youtube.com/watch?v=c3slYZjniJs
+
+Semana 3:
+Ejemplos del 14 al 20b
+Ejercicio 6
+Videos:
+7 - Memoria compartida
+https://www.youtube.com/watch?v=FM7V5EF9g5I
+8 - condicion de carrera y seccion critica
+https://www.youtube.com/watch?v=Nyg6Vv85Rpk
+9 - Monitores
+https://www.youtube.com/watch?v=rgT-vGbJcJg
+10 - Metodos y bloques sincronizados
+https://www.youtube.com/watch?v=QsXH2yLHD-E
+
+Semana 4:
+Ejemplos del 21 al 22
+Ejercicios 7 8a 8b 8c 8d
+Videos:
+11 - metodos notify y wait
+https://www.youtube.com/watch?v=t0EWIiqVxvE
+
+
+Semana 5:
+Ejemplos del 23 al 27
+Ejercicios 9 y 10
+Videos:
+12 - gestion de multiples hilos
+https://www.youtube.com/watch?v=sy-HD6nHWq0
+13 - ejemplos de thread pools
+https://www.youtube.com/watch?v=WPM5TGqNj_k
+
+Semana 6:
+Ejemplos del 28 al 33
+Ejercicios 11 - 14
+Videos:
+14 - Async y await en C#
+https://www.youtube.com/watch?v=eNpPQtkEZl4
+
+15 - asincrona en C# creacion de tareas
+https://www.youtube.com/watch?v=pxKU4v14RMY
+
+16 - asincrona en C# callbacks
+https://www.youtube.com/watch?v=Sl0yIG_vv5I
+
+

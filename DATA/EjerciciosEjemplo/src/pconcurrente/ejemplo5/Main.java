@@ -1,11 +1,11 @@
-package u2.ejemplo5;
+package pconcurrente.ejemplo5;
 
 public class Main {
-
     public static void main(String[] args) {
 
         // Preparamos el café, la ejecución se realizará en un nuevo hilo
         Runnable r = new Runnable(){
+            @Override
             public void run() {
                 try{
                     System.out.println("Café: Comenzamos a preparar el café");
@@ -24,7 +24,7 @@ public class Main {
         Thread t = new Thread(r);
         t.start();
 
-        // Mientras tanto preparamos las tostadas
+
         try{
             PrepararTostadas();
         } catch(InterruptedException ie){
@@ -43,3 +43,18 @@ public class Main {
         System.out.println("Tostadas: Tostadas finalizadas");
     }
 }
+
+/*
+DOCUMENTACION
+-------------
+
+Podemos crear un hilo secundario mediante el uso de CLASES ANONIMAS.
+
+Estas son clases que no necesitan de un fichero adjunto para funcionar, se crean desde el mismo código.
+
+LAS CLASES ANONIMAS solo se pueden crear de Clases que HEREDAN DE OTRA o que IMPLEMENTAN UNA INTERFAZ.
+La sintaxis es la siguiente: Runnable r = new Runnable(){ // CODIGO A EJECUTAR }
+
+Desde una clase anónima puedo acceder pero no modificar VARIABLES LOCALES.
+
+ */

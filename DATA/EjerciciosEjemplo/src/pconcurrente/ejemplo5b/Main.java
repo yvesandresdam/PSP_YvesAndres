@@ -1,15 +1,14 @@
-package u2.ejemplo5b;
+package pconcurrente.ejemplo5b;
 
 public class Main {
-
-    public static void miRun(){
-
-    }
-
     public static void main(String[] args) {
 
-        // Preparamos el café, la ejecución se realizará en un nuevo hiloç
+        // En el ejercicio anterior la linea de codigo era la siguiente
+        // Runnable runnable = new Runnable(){ // Codigo };
+        // Thread t = new Thread(runnable);
+
         Thread t = new Thread(new Runnable(){
+            @Override
             public void run() {
                 try{
                     System.out.println("Café: Comenzamos a preparar el café");
@@ -27,7 +26,6 @@ public class Main {
         });
         t.start();
 
-        // Mientras tanto preparamos las tostadas
         try{
             PrepararTostadas();
         } catch(InterruptedException ie){

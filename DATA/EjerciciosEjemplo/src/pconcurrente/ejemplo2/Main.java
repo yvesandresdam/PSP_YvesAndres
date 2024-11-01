@@ -30,3 +30,26 @@ public class Main {
         System.out.println("Café: Café finalizado");
     }
 }
+
+    /*
+    DOCUMENTACION
+    -------------
+
+    El Hilo principal es el unico hilo que no podemos eliminar del programa.
+    También se llama 'Main Thread'.
+
+    2000 ms = 2 segundos
+
+    Existe una clase que contiene las instruccion sobre hilos y es estática.
+    La clase 'Thread'. Al ser estática, los métodos se llaman directamente.
+
+    El metodo Thread.sleep duerme o para el proceso de la ejecución de dicho hilo.
+
+    Las clases que usan hilos lanzan una excepcion InterruptedException.
+    Podemos ponerlo dentro del método con un bloque try/catch o desde la firma de la función
+
+    En este ejemplo los métodos se ejecutan dentro del mismo hilo, luego se disponen secuencialmente.
+    Si un método dura 6 segundos, la totalidad del programa es de 12 segundos.
+
+
+     */

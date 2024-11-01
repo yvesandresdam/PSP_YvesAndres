@@ -1,4 +1,4 @@
-package u2.ejemplo3;
+package pconcurrente.ejemplo3;
 
 public class Main2 {
     public static void main(String[] args) {
@@ -26,6 +26,14 @@ public class Main2 {
         Thread.sleep(2000);
         System.out.println("Tostadas: Tostadas finalizadas");
     }
-
-
 }
+
+/*
+DOCUMENTACION
+-------------
+
+Debido a que la primera función del hilo principal es PrepararTostadas, que presenta unos
+Thread.sleep de 2 segundos, la función preparar cafe no comienza hasta que termina la tarea anterior.
+
+
+ */

@@ -1,4 +1,4 @@
-package u2.ejemplo3;
+package pconcurrente.ejemplo3;
 
 public class Main {
 
@@ -27,3 +27,21 @@ public class Main {
         System.out.println("Tostadas: Tostadas finalizadas");
     }
 }
+
+/*
+DOCUMENTACION
+-------------
+
+Aquí tenemos un ejemplo de programación concurrente. En la linea c.start() se comienza la ejecución
+de un nuevo hilo de compilación, que ejecuta órdenes de manera alterna con el 'main Thread'. Es la función
+start() la que inicia un nuevo hilo.
+
+Este nuevo hilo se puede crear de diferentes maneras, como se aprecia en la clase Cafetera. En este caso se utiliza
+el metodo de HEREDAR DE LA CLASE THREAD.
+
+La clase Cafetera hereda de la clase Thread con 'extends'. Entonces tenemos que sobreescribir su metodo 'run()'
+con el código que queremos que se ejecute en otro hilo. Tambien hay que añadir la anotacion '@Override'.
+Hay que añadir una secuencia try/catch dentro del código. No podemos realizarlo desde la firma, porque estamos
+heredando.
+
+ */

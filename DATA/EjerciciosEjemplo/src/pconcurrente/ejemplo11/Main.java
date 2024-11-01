@@ -1,4 +1,4 @@
-package u2.ejemplo11;
+package pconcurrente.ejemplo11;
 
 import java.util.Random;
 
@@ -25,3 +25,15 @@ public class Main {
         System.out.println("El hilo ha finalizado");
     }
 }
+
+/*
+DOCUMENTACION
+-------------
+
+Esta es una manera de ejecutar codigo cuando el proceso del hilo ha terminado.
+con un bucle While comprobamos que el hilo sigue vivo para esperar durante 1 segundo.
+En el momento que el hilo ha finalizado, entonces mostramos por pantalla un mensaje.
+El problema es que no podemos estar seguros de cada cuanto tiempo tenemos que evaluar la condicion
+While, 1 segundo puede ser poco y 10 segundo puede ser mucho.
+
+*/

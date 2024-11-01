@@ -1,14 +1,7 @@
-package u2.ejemplo7;
+package pconcurrente.ejemplo7;
 
 public class Main {
-
-    public static void miRun(){
-
-    }
-
     public static void main(String[] args) {
-
-        // Preparamos el café, la ejecución se realizará en un nuevo hiloç
         Thread t = new Thread(()->{
             try{
                 System.out.println("Café: Comenzamos a preparar el café");
@@ -25,7 +18,6 @@ public class Main {
         });
         t.start();
 
-        // Mientras tanto preparamos las tostadas
         try{
             PrepararTostadas();
         } catch(InterruptedException ie){
@@ -44,3 +36,28 @@ public class Main {
         System.out.println("Tostadas: Tostadas finalizadas");
     }
 }
+
+/*
+DOCUMENTACION
+-------------
+
+Creamos Hilos utilizando expresiones Lambda.
+
+En el caso concreto de Thread, es posible pasarle por parámetros una interfaz 'runnable' y es por ello
+que podemos utilizar una expresion lambda.
+
+La sintaxis es:
+
+Thread hilo = new Thread (() -> { // Código }
+
+No se añaden parametros en los parentesis porque la única funcion de runnable es 'run()', asi los parentesis estan vacios.
+Luego viene flecha y luego entre llaves { } el codigo que hace funcionar run();
+
+SOLO PODEMOS UTILIZAR LA EXPRESION LAMBDA, SI LA INTERFAZ SOLO TIENE UN METODO PARA IMPLEMENTAR.
+EN EL CASO DE RUNNABLE, SOLO CONTIENE LA FUNCION RUN().
+
+PODEMOS CREAR NUESTRA PROPIA EXPRESION LAMBDA, PERO SOLO DESDE UNA INTERFAZ DE UN UNICO CODIGO
+
+Desde dentro de la expresion lambda PODEMOS LEER UNA VARIABLE LOCAL, PERO NO PODEMOS MODIFICARLA.
+
+ */

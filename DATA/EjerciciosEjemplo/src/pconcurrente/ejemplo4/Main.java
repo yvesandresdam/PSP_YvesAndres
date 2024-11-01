@@ -1,10 +1,12 @@
-package u2.ejemplo4;
+package pconcurrente.ejemplo4;
 
 public class Main {
 
     public static void main(String[] args) {
         // Preparamos el café, la ejecución se realizará en un nuevo hilo
-        Thread t = new Thread(new Cafetera());
+        // El objeto 'cafetera' es de la clase 'Cafetera' que implementa 'Runable'
+        Cafetera cafetera = new Cafetera();
+        Thread t = new Thread(cafetera);
         t.start();
 
         // Mientras tanto preparamos las tostadas
@@ -26,3 +28,24 @@ public class Main {
         System.out.println("Tostadas: Tostadas finalizadas");
     }
 }
+
+/*
+DOCUMENTACION
+-------------
+
+En este ejemplo, creamos un hilo secundario mediante la un objeto que implementa la interfaz 'Runnable'
+
+El objeto que le pasamos por parámetros a la creación de un objeto 'Thread' DEBE SER OBLIGATORIAMENTE un objeto runnable.
+
+Una interfaz deja la firma de las funciones, pero no las define. Es tarea de las clases que la implementan, las que deben definir dichas funciones.
+
+La interfaz 'Runnable' SOLO TIENE UN METODO, el metodo 'run()'.
+
+Para crear un hilo podemos extender la clase Thread, o implementar la interfaz 'Runnable'. Creamos un
+hilo con Thread t = new Thread() o Thread t = new Thread(runnable).
+
+el funcionamiento de la creacion de hilos, se basa en ejecutar secuencialmente las tareas de cada hilo
+y cuando se produce un hilo.start() se crea otro hilo de forma paralela al primero.
+
+
+ */

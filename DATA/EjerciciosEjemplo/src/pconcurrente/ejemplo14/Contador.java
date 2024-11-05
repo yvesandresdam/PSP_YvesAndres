@@ -1,4 +1,4 @@
-package u2.ejemplo14;
+package pconcurrente.ejemplo14;
 
 public class Contador implements Runnable{
 
@@ -14,3 +14,13 @@ public class Contador implements Runnable{
                 ". El valor del contador es " + contador);
     }
 }
+
+/*
+DOCUMENTACION
+-------------
+
+La clase contador crea un objeto Contador que lo que hace es incrementar en 1 su valor hasta llegar al 100.
+
+Entonces saca un mensaje por pantalla indicando su valor.
+
+ */

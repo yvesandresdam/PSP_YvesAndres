@@ -1,4 +1,4 @@
-package u2.ejemplo16;
+package pconcurrente.ejemplo16;
 
 public class Main {
     public static void main(String[] args) {
@@ -18,3 +18,11 @@ public class Main {
     }
 }
 
+/*
+DOCUMENTACION
+-------------
+
+Vamos a crear el ejercicio identico al anterior, mediante el uso de FUNCIONES LAMBDA.
+Igual estamos creando 5 hilos distintos con un bucle for y en cada uno de ellos incrementamos en uno su variable contador.
+Como los recursos NO ESTAN COMPARTIDOS, la variable llegara a 100 y dispondra un mensaje en cada uno de los hilos.
+ */

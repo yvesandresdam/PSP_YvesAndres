@@ -1,4 +1,4 @@
-package u2.ejemplo18;
+package pconcurrente.ejemplo18;
 
 public class Main {
 
@@ -35,7 +35,27 @@ public class Main {
 		 *  con cada ejecución se obtendrá un resultado diferente.
 		*/
 		System.out.println("Saldo final: " + c.getSaldo());
-		
 	}
-
 }
+
+/*
+DOCUMENTACIÓN
+-------------
+
+En el momento en que se comparten variables, pueden producirse resultados inesperados llamados CONDICIONES DE CARRERA.
+CONDICIONES DE CARRERA SE PRODUCEN CUANDO EL RESULTADO DE LA EJECUCIÓN DE UN CÓDIGO FUENTE, DEPENDE DEL ORDEN EN EL QUE DISPONEMOS SUS ELEMENTOS.
+ES DECIR QUE LOS RESULTADOS CAMBIAN SEGUN EL ORDEN DEL CODIGO.
+
+Estas se producen cuando desde distintos lugares del código se accede a los RECURSOS COMPARTIDOS.
+
+Una SECCION CRITICA son aquellas partes del código EN EL QUE ACCEDEMOS Y MODIFICAMOS LAS VARIABLES DE LOS RECURSOS COMPARTIDOS.
+
+En este ejemplo, la clase HILOINGRESO e HILO REINTEGRO llaman a funciones distintas de CUENTA, las funciones son distintas
+y por tanto no son secciones criticas. Sin embargo, dentro de la clase CUENTA, el metodo REINTEGRAR E INGRESAR MODIFICAN LA MISMA VARIABLE,
+LA VARIABLE QUE ESTA COMPARTIDA POR LOS OBJETOS DE DOS CLASES DISTINTAS, ESTA VARIABLE ES SALDO,
+LUEGO LOS METODOS REINTEGRAR E INGRESAR DE LA CLASE CUENTA CONFORMAN LA SECCION CRITICA DE LOS RECURSOS COMPARTIDOS.
+
+Es importante localizar las secciones críticas, ya que será sobre estas partes donde tomaremos medidas para evitar las condiciones de carrera.
+
+
+ */

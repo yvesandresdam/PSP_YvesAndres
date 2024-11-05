@@ -1,4 +1,4 @@
-package u2.ejemplo13;
+package pconcurrente.ejemplo13;
 
 public class Cafetera implements Runnable {
 
@@ -27,3 +27,12 @@ public class Cafetera implements Runnable {
         }
     }
 }
+
+/*
+DOCUMENTACION
+-------------
+
+En este ejemplo queremos ejecutar el proceso de preparar un cafe mientras el bucle sea verdadero,
+lo cual ocurre siempre, debido a su condicion 'true'
+
+*/

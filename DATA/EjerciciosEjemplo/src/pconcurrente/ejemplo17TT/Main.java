@@ -43,3 +43,11 @@ public class Main {
     }
 }
 
+
+/*
+DOCUMENTACIÓN
+----------------------
+
+En estos ejemplos se muestra que desde el interior de las funciones lambda o clases anónimas no podemos acceder a las variables locales. La solución es extraerla como atributo de clase o fuera del bucle de creación de hilos.
+
+ */

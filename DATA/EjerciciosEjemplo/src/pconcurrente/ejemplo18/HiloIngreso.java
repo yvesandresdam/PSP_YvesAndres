@@ -1,4 +1,4 @@
-package u2.ejemplo18;
+package pconcurrente.ejemplo18;
 
 public class HiloIngreso implements Runnable {
 
@@ -15,5 +15,4 @@ public class HiloIngreso implements Runnable {
 			cuenta.ingresar(100);
 		}
 	}
-
 }

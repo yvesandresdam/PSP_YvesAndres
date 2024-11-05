@@ -1,4 +1,4 @@
-package u2.ejemplo17b;
+package pconcurrente.ejemplo17b;
 
 public class Main {
     public static void main(String[] args) {
@@ -7,7 +7,8 @@ public class Main {
         for(int i = 1; i <= 5; i++){
             Thread t = new Thread(() ->{
                 for(int j = 0; j < 100; j++){
-                    // contador++; La modificación de la variable local desde la expresión lambda produce un error
+                // contador++;
+                // La modificación de la variable local desde el interior de la expresión lambda produce un error
                 }
                 System.out.println(
                 "Finalizado el hilo " + Thread.currentThread().getName() +
@@ -17,4 +18,12 @@ public class Main {
         }
     }
 }
+
+/*
+DOCUMENTACIÓN
+----------------------
+
+En estos ejemplos se muestra que desde el interior de las funciones lambda o clases anónimas no podemos acceder a las variables locales. La solución es extraerla como atributo de clase o fuera del bucle de creación de hilos.
+
+ */
 

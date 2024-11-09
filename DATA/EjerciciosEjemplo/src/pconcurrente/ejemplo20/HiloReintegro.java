@@ -1,4 +1,4 @@
-package u2.ejemplo20;
+package pconcurrente.ejemplo20;
 
 public class HiloReintegro implements Runnable {
 
@@ -12,10 +12,11 @@ public class HiloReintegro implements Runnable {
 	public void run() {
 		for(int i = 0; i < 1000; i++) {
 			// Este hilo retira 1000 veces 100€
+			// Este método reintegrar esta definido como 'synchronized'
+			// y su monitor es este objeto en particular 'cuenta'
 			synchronized (cuenta){
 				cuenta.reintegrar(100);
 			}
 		}
 	}
-
 }

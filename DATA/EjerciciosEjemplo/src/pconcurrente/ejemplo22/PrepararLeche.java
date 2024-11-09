@@ -1,5 +1,7 @@
-package u2.ejemplo22;
+package pconcurrente.ejemplo22;
 
+// Esta es la clase DEPENDIENTE
+// Funciona solo en caso que se cumpla una condicion con respecto a la clase PrepararCafe
 public class PrepararLeche implements Runnable {
 
     private Taza taza;
@@ -22,6 +24,8 @@ public class PrepararLeche implements Runnable {
                     taza.wait();
                 }
             }
+            // En este bloque sincronizado, el objeto taza realiza una funcion de espera, en caso que
+            // no se cumpla la condicion de que hay cafe en la taza.
 
             System.out.println("Leche: Servimos la leche en la taza.");
             taza.añadirIngrediente("con leche");

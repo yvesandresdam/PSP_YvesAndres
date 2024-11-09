@@ -1,9 +1,11 @@
-package u2.ejemplo22;
+package pconcurrente.ejemplo22;
+
+// Esta es la clase INDEPENDIENTE
+// Funciona a pesar de la clase Preparar la Leche
 
 public class PrepararCafe implements Runnable {
 
     private Taza taza;
-
     public PrepararCafe(Taza t) { taza = t;}
 
     @Override

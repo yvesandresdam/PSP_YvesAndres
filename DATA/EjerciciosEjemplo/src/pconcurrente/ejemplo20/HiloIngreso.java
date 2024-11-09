@@ -1,4 +1,4 @@
-package u2.ejemplo20;
+package pconcurrente.ejemplo20;
 
 public class HiloIngreso implements Runnable {
 
@@ -12,6 +12,8 @@ public class HiloIngreso implements Runnable {
 	public void run() {
 		for(int i = 0; i < 1000; i++) {
 			// Este hilo ingresa 1000 veces 100€
+			// Este método ingresar esta definido como 'synchronized'
+			// y su monitor es este objeto en particular 'cuenta'
 			synchronized (cuenta){
 				cuenta.ingresar(100);
 			}

@@ -39,3 +39,13 @@ https://www.youtube.com/watch?v=sy-HD6nHWq0
 
 13 - ejemplos de threadpools
 https://www.youtube.com/watch?v=WPM5TGqNj_k
+
+14 - Asincrona en C# - await y async
+https://www.youtube.com/watch?v=eNpPQtkEZl4
+
+15 - Creacion de tareas en C#
+https://www.youtube.com/watch?v=pxKU4v14RMY
+
+16 - Callbacks en C#
+https://www.youtube.com/watch?v=Sl0yIG_vv5I
+

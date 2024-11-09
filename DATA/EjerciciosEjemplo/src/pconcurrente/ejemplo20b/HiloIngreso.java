@@ -1,20 +1,22 @@
-package u2.ejemplo20b;
+package pconcurrente.ejemplo20b;
 
 public class HiloIngreso implements Runnable {
 
 	private Cuenta cuenta;
+	private Perro perro;
 	private Object object;
-	
-	public HiloIngreso(Cuenta cuenta, Object object) {
+
+	public HiloIngreso(Cuenta cuenta, Object object, Perro perro) {
 		this.cuenta = cuenta;
 		this.object = object;
+		this.perro = perro;
 	}
 	
 	@Override
 	public void run() {
 		for(int i = 0; i < 1000; i++) {
-			// Este hilo ingresa 1000 veces 100€
-			synchronized (object){
+			// En este caso el objeto MONITOR es 'perro'
+			synchronized (perro){
 				cuenta.ingresar(100);
 			}
 		}

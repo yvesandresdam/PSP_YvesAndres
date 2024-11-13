@@ -46,10 +46,10 @@ public class Main {
     El metodo Thread.sleep duerme o para el proceso de la ejecución de dicho hilo.
 
     Las clases que usan hilos lanzan una excepcion InterruptedException.
-    Podemos ponerlo dentro del método con un bloque try/catch o desde la firma de la función
+    Podemos ponerlo dentro del metodo con un bloque try/catch o desde la firma de la función
 
     En este ejemplo los métodos se ejecutan dentro del mismo hilo, luego se disponen secuencialmente.
-    Si un método dura 6 segundos, la totalidad del programa es de 12 segundos.
+    Si un metodo dura 6 segundos, la totalidad del programa es de 12 segundos.
 
 
      */

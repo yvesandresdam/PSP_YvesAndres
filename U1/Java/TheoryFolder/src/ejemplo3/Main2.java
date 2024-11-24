@@ -1,4 +1,4 @@
-package pconcurrente.ejemplo3;
+package ejemplo3;
 
 public class Main2 {
     public static void main(String[] args) {

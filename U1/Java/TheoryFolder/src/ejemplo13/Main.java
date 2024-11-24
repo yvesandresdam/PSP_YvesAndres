@@ -1,16 +1,22 @@
-package pconcurrente.ejemplo13;
+package ejemplo13;
 
-public class Cafetera implements Runnable {
+public class Main {
 
-    private int contador = 0;
-    public int getContador() {
-        return contador;
+    public static void main(String[] args) {
+
+        // Lanzamos el hilo
+        Cafetera c = new Cafetera();
+        Thread t = new Thread(c);
+        t.start();
     }
+}
 
+class Cafetera implements Runnable {
     @Override
     public void run() {
-        try{
-            while(true){
+        try {
+            int contador = 0;
+            while (true) {
                 // Comenzamos a preparar el café
                 // Ponemos la cafetera
                 Thread.sleep(200);
@@ -22,18 +28,17 @@ public class Cafetera implements Runnable {
                 contador++;
                 System.out.println("Nº de cafés preparados: " + contador);
             }
-        }catch (InterruptedException ie){
+        } catch (InterruptedException e) {
             System.out.println("Hilo interrumpido");
         }
     }
 }
-
 
 /*
 DOCUMENTACION
 -------------
 
 En este ejemplo queremos ejecutar el proceso de preparar un cafe mientras el bucle sea verdadero,
-lo cual ocurre siempre, debido a su condicion 'true'
+lo cual ocurre siempre, debido a su condicion 'true'.
 
 */

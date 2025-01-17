@@ -30,19 +30,19 @@ public class Servidor {
             // Cada conexion aceptada crea un nuevo socket. Cada socket tiene un ID
             {
                 threads.execute(() -> {
-                    createNewSocketConnection(server, 1);
+                    createNewSocketConnection(server, Servidor.getUserCount());
                 });
 
                 threads.execute(() -> {
-                    createNewSocketConnection(server, 2);
+                    createNewSocketConnection(server, Servidor.getUserCount());
                 });
 
                 threads.execute(() -> {
-                    createNewSocketConnection(server, 3);
+                    createNewSocketConnection(server, Servidor.getUserCount());
                 });
 
                 threads.execute(() -> {
-                    createNewSocketConnection(server, 4);
+                    createNewSocketConnection(server, Servidor.getUserCount());
                 });
             }
             // Cierre de tareas para terminar la conexion con el servidor
@@ -66,7 +66,7 @@ public class Servidor {
             writersList.add(writer);
 
             // Bucle principal del programa de mensajeria
-            serverClientComunicable(socket, writer);
+            serverClientComunicable(socket, writer, id);
 
             // Fin de creacion de Socket
         } catch (IOException e) {
@@ -77,8 +77,11 @@ public class Servidor {
         System.out.println("Desconexion del servidor");
     }
 
-    private static void serverClientComunicable(Socket socket, PrintWriter writer) {
+    private static void serverClientComunicable(Socket socket, PrintWriter writer, int id) {
         try (BufferedReader reader = new BufferedReader(new InputStreamReader(socket.getInputStream()))) {
+
+            // Mensajes de UI
+            writer.printf("Usted es el Cliente  %d - @C%d:%n",id,id);
 
             // Herramientas de clase
             Scanner scanner = new Scanner(System.in);
@@ -100,15 +103,15 @@ public class Servidor {
 
                         if (codeStringWrite.equals("@ALL")) {
                             for (PrintWriter writerAll : writersList)
-                                writerAll.printf("@ALL: %s%n", mensajeRecibido);
+                                writerAll.println(mensajeRecibido);
                         } else if (codeStringWrite.equals("@C1:")) {
-                            writersList.get(0).printf("@C1: %s%n", mensajeRecibido);
+                            writersList.get(0).println(mensajeRecibido);
                         } else if (codeStringWrite.equals("@C2:")) {
-                            writersList.get(1).printf("@C2: %s%n", mensajeRecibido);
+                            writersList.get(1).println(mensajeRecibido);
                         } else if (codeStringWrite.equals("@C3:")) {
-                            writersList.get(2).printf("@C3: %s%n", mensajeRecibido);
+                            writersList.get(2).println(mensajeRecibido);
                         } else if (codeStringWrite.equals("@C4:")) {
-                            writersList.get(3).printf("@C4: %s%n", mensajeRecibido);
+                            writersList.get(3).println(mensajeRecibido);
                         }
                         System.out.println(mensajeRecibido);
                         mensajeRecibido = reader.readLine();
@@ -162,7 +165,7 @@ public class Servidor {
     }
 
     // Funcion estatica que lleva el conteo del numero de clientes conectados
-    public static int getUserNumber(){
+    private static int getUserCount(){
         currentUser++;
         return currentUser;
     }
